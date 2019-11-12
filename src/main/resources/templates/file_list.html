@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>打开Excel文件</title>
+        <script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="pageoffice.js" id="po_js_main"></script>
+        <script type="text/javascript">
+          	function Save() {
+              	document.getElementById("PageOfficeCtrl1").WebSave();
+        	}
+        </script>
+        <script type="text/javascript">
+         function AddSeal() {
+			try{
+        		  document.getElementById("PageOfficeCtrl1").ZoomSeal.AddSeal();
+			}catch (e){ };
+        	}
+  		</script>
+        
+    </head>
+    <body>
+    <table>
+      <tr th:each="file:${fileList}">
+      	<td>打开文件 
+		 <a href="#" th:onclick="'javascript:openPageOffice(\''+${file}+'\')'" th:text="${file}"></a>
+		</td>
+		<td>下载<a th:href="@{/fileDownload(fileName=${file})}"  th:text="${file }"></a></td>
+      </tr>
+    </table>
+    	<a th:href="@{javascript:POBrowser.openWindowModeless('word','width=1200px;height=800px;');}">rest-word</a>
+    </body>
+    
+    <script th:inline="javascript">
+		function openPageOffice(file){
+			POBrowser.openWindowModeless('/customWord?fileName='+file+'','width=1200px;height=800px;');
+		}
+	</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>打开Excel文件</title>
+        <script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="pageoffice.js" id="po_js_main"></script>
+        <script type="text/javascript">
+          	function Save() {
+              	document.getElementById("PageOfficeCtrl1").WebSave();
+        	}
+        </script>
+        <script type="text/javascript">
+         function AddSeal() {
+			try{
+        		  document.getElementById("PageOfficeCtrl1").ZoomSeal.AddSeal();
+			}catch (e){
+				
+			};
+        }
+  		</script>
+        
+    </head>
+    <body>
+    	<a th:href="@{javascript:POBrowser.openWindowModeless('word','width=1200px;height=800px;');}">rest-word</a>
+    	<a th:href="@{javascript:POBrowser.openWindowModeless('excel','width=1200px;height=800px;');}">rest-excel</a>
+    </body>
+</html>
