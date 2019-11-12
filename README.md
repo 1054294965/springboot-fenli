@@ -1,9 +1,9 @@
-pafeOffice前后端分离  用springboot,thymeleaf,node.js来实现
-需要环境：
-java环境
-maven,gradle环境
-node,npm环境
-git工具
+pafeOffice前后端分离  用springboot,thymeleaf,node.js来实现</br>
+需要环境：</br>
+java环境</br>
+maven,gradle环境</br>
+node,npm环境</br>
+git工具</br>
 
 测试序列号：CA1XB-MF7Y-12ST-PSBP2
 d盘创建lic-fenli文件夹，  将poseal.db和license.lic拷贝进来 (poseal.db是sqlite需要的数据库文件，license.lic是注册生成的文件，如果没有会要求注册)
